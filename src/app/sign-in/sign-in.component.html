@@ -1,0 +1,35 @@
+<div class="materialContainer">
+  <div class="box">
+    <form [formGroup]="signIn" (ngSubmit)="onSubmit()">
+      <div class="title">LOGIN</div>
+
+      <div class="input">
+        <label for="name">Email</label>
+        <input type="email" placeholder="Email" formControlName="email" />
+        <span class="spin"></span>
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="signIn.get('email').invalid && signIn.get('email').touched">
+          Invalid Email!!!
+      </div>
+
+      <div class="input">
+        <label for="pass">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span class="spin"></span>
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="signIn.get('password').invalid && signIn.get('password').touched">
+        Invalid Password!!!
+    </div>
+
+      <div class="button login">
+        <button><span>GO</span> <i class="fa fa-check"></i></button>
+      </div>
+
+      <a href="" class="pass-forgot">Forgot your password?</a>
+    </form>
+  </div>
+</div>
